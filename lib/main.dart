@@ -16,7 +16,6 @@ void main()async{
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print(FlutterConfig.get('Google_MAPS_API_KEY'));
     return ChangeNotifierProvider.value(
       value: GreatPlaces(),
       child: MaterialApp(
