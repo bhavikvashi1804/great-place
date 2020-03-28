@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
 
@@ -28,7 +28,7 @@ class _LocationInputState extends State<LocationInput> {
   }
 
   Future<void> _selectOnMap()async{
-     final selectedLocaion =await Navigator.of(context).push(
+     final selectedLocaion =await Navigator.of(context).push<LatLng>(
       MaterialPageRoute(
         fullscreenDialog: true,
         builder: (ctx)=>MapScreen(
@@ -42,6 +42,8 @@ class _LocationInputState extends State<LocationInput> {
       return;
     }
     //else use that location and store it
+    //print(selectedLocaion.latitude);
+    //print(selectedLocaion.longitude);
 
   }
 
